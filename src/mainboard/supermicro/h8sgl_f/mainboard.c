@@ -48,7 +48,7 @@ void set_pcie_dereset(void)
 *************************************************/
 static void mainboard_enable(struct device *dev)
 {
-	printk(BIOS_INFO, "Mainboard KGPE-D16 Enable. dev=0x%p\n", dev);
+	printk(BIOS_INFO, "Mainboard H8SGL-F Enable. dev=0x%p\n", dev);
 
 	msr_t msr, msr2;
 

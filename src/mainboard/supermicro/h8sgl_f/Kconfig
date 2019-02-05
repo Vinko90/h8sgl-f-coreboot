@@ -1,4 +1,4 @@
-if BOARD_ASUS_KGPE_D16
+if BOARD_SUPERMICRO_H8SGL_F
 
 config BOARD_SPECIFIC_OPTIONS
 	def_bool y
@@ -12,7 +12,8 @@ config BOARD_SPECIFIC_OPTIONS
 	select SOUTHBRIDGE_AMD_SB700
 	select SOUTHBRIDGE_AMD_SB700_DISABLE_ISA_DMA
 	select SOUTHBRIDGE_AMD_SUBTYPE_SP5100
-	select SUPERIO_WINBOND_W83667HG_A
+	# select SUPERIO_WINBOND_W83667HG_A
+	select SUPERIO_WINBOND_W83627HF
 	select PARALLEL_CPU_INIT
 	select HAVE_ROMSTAGE_CONSOLE_SPINLOCK
 	select HAVE_ROMSTAGE_NVRAM_CBFS_SPINLOCK
@@ -24,23 +25,25 @@ config BOARD_SPECIFIC_OPTIONS
 	select HAVE_ACPI_TABLES
 	select SB_HT_CHAIN_UNITID_OFFSET_ONLY
 	select LIFT_BSP_APIC_ID
-	select BOARD_ROMSIZE_KB_2048
+	#16MB flash
+	# select BOARD_ROMSIZE_KB_2048
+	select BOARD_ROMSIZE_KB_16384
 	select ENABLE_APIC_EXT_ID
 	select SPI_FLASH
 	select MAINBOARD_HAS_LPC_TPM
 	select HAVE_ACPI_RESUME
 	select DRIVERS_I2C_W83795
-	select DRIVERS_ASPEED_AST2050
+	# select DRIVERS_ASPEED_AST2050
 	select MAINBOARD_FORCE_NATIVE_VGA_INIT
 	select MAINBOARD_HAS_NATIVE_VGA_INIT
 
 config MAINBOARD_DIR
 	string
-	default "asus/kgpe-d16"
+	default "supermicro/h8sgl_f"
 
 config BOOTBLOCK_MAINBOARD_INIT
 	string
-	default "mainboard/asus/kgpe-d16/bootblock.c"
+	default "mainboard/supermicro/h8sgl_f/bootblock.c"
 
 config DCACHE_RAM_BASE
 	hex
@@ -56,7 +59,7 @@ config APIC_ID_OFFSET
 
 config MAINBOARD_PART_NUMBER
 	string
-	default "KGPE-D16"
+	default "H8SGL-F"
 
 config HW_MEM_HOLE_SIZEK
 	hex
@@ -103,4 +106,4 @@ config MAX_REBOOT_CNT
 	int
 	default 10
 
-endif # BOARD_ASUS_KGPE_D16
+endif # BOARD_SUPERMICRO_H8SGL_F
